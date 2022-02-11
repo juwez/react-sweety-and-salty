@@ -6,18 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import {IntlProvider} from "react-intl";
 import locale_en from "./translations/en.json";
 import locale_nl from "./translations/nl.json";
+import locale_fr from "./translations/nl.json";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 const data = {
   'nl': locale_nl,
-  'en': locale_en
+  'en': locale_en,
+  'fr': locale_fr
 };
 const language = navigator.language.split(/[-_]/)[0];
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode> 
   <IntlProvider locale={language} messages={data[language]}>
     <App />
-    </IntlProvider>,
+    </IntlProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,13 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header.js'
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from './pages/HomePage';
+import CreateMenu from './pages/CreateMenuPage';
+import Menu from './pages/MenuPage';
+import PriceList from './pages/PriceListPage';
 
 function App() {
   return (
     <div className="App">
-          <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+          <Router>
+      <Header />
+      <Routes>
+
+      <Route exact path="/" element={<Home />} />
+      <Route exaxt path="/menu/create" element={<CreateMenu />} />
+      <Route exact path="/menu/show" element={<Menu />} />
+      <Route exact path="/price" element={<PriceList />} />
+          </Routes>
+    </Router>
     </div>
+    
   );
 }
 
